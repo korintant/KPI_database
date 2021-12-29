@@ -1,0 +1,49 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d7eb2723-13d5-44d2-a165-e9c7518bcb11</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>DB_lab3_python.py</StartupFile>
+    <SearchPath>tables;db</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>DB_lab3_python</Name>
+    <RootNamespace>DB_lab3_python</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="db\DBSession.py" />
+    <Compile Include="DB_lab3_python.py" />
+    <Compile Include="tables\base.py" />
+    <Compile Include="tables\Subject_of_education_activity.py" />
+    <Compile Include="tables\Individual.py" />
+    <Compile Include="tables\Student_ticket.py" />
+    <Compile Include="tables\Education_document.py" />
+    <Compile Include="tables\Education.py" />
+    <Compile Include="tables\EIT_certificate.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="db\" />
+    <Folder Include="tables\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
